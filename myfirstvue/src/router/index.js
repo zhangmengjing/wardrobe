@@ -1,15 +1,44 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import VueRouter from 'vue-router'
 
-Vue.use(Router)
+import  Home from '@/page/home/Home'
+import ShoppingCart from '@/page/shoppingcart/ShoppingCart'
+import Order from  '@/page/order/Order'
+import MyClothes from '@/page/myclothes/MyClothes'
+import AboutHome from '@/page/about/AboutHome'
+import Login from  '@/page/login/Login'
+Vue.use(VueRouter);
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
+const routes = [
+  {
+    path:'/',
+    component:Home
+  },
+  {
+    path:'/cart',
+    component:ShoppingCart
+  },
+  {
+    path:'/order',
+    component:Order
+  },
+  {
+    path:'/clothes',
+    component:MyClothes
+  },
+  {
+    path:'/about',
+    component:AboutHome
+  },
+  {
+    path:'/login',
+    component:Login
+  }
   ]
+
+var router =  new VueRouter({
+  routes
 })
+
+export default router;
+
